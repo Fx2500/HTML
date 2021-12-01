@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --dark-gray: #333;
+  --black: #222;
+  --white: #fafafa;
+  --rose: #ff7979;
+  --font-primary: #333;
+  --font-secondary: #555;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--dark-gray);
+  color: var(--black);
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: var(--white);
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 4rem;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: var(--rose);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open{
+  left: 60%;
+}
+
+.circle button#close{
+  top: 60%; 
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li +li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content img {
+  max-width: 1000px;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  color: var(--font-secondary);
+  font-style: italic;
+  }
+
+.container p {
+  color: var(--font-primary);
+  line-height: 1.5;
+
+}
+
